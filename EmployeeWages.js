@@ -67,6 +67,3 @@ function getWorkHours() {
     }
 
     console.log(getWorkHours());
-    
-
-    
