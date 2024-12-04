@@ -1,8 +1,3 @@
-# EmployeeWages
-Sure, here's the detailed description formatted for your `README.md` file:
-
----
-
 # Employee Attendance and Wage Calculation
 
 This project includes several JavaScript functions to simulate employee attendance and calculate their wages based on their working hours. Below is a detailed description of each function:
@@ -139,7 +134,3 @@ console.log(maxWages());
 
 - **Purpose**: Calculates the total salary based on a maximum of 160 working hours or 20 days.
 - **Logic**: Uses a while loop to sum up the hours and salary until one of the conditions is met.
-
----
-
-Feel free to adjust the descriptions as needed! If you have any more questions or need further assistance, let me know.
