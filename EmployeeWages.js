@@ -74,16 +74,36 @@ function getWorkHours() {
 function monthlyWages() {
 
     let totalSalary = 0
-    let day = 0
+    let days = 0
 
     for(let i = 0; i< 20; i++){
 
         if (isPresent()) {
-            let {salary, time}= employeeWage()
+            var {salary, time}= employeeWage()
             totalSalary += salary
-            day++;
+            days++;
         }
     }
-    console.log("Employee Worked for "+ day + " days, hence total salary: " + totalSalary);   
+    console.log("Employee Worked for "+ days + " days, hence total salary: " + totalSalary); 
 }
-monthlyWages()
+// monthlyWages()git 
+
+5. // Calculate Wages till a condition of total working hours of 160 or max days of 20 is reached for a month
+
+function maxWages() {
+    let totalSalary = 0;
+    let days = 0
+    totalTime = 0
+
+    while (days < 20 && totalTime < 160) {
+        if (isPresent) {
+            days++;
+            var {salary, time} = employeeWage()
+            totalTime += time
+            totalSalary += salary
+        }
+    }
+    return "Total Working Hours: " + totalTime + "Hours, Total Working days: " + days + ". Hence you get Salary: " + totalSalary
+}
+
+console.log(maxWages());
