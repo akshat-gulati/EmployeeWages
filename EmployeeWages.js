@@ -47,5 +47,3 @@ function employeeWage() {
 
 console.log("Salary get: $" + employeeWage());
     
-
-
