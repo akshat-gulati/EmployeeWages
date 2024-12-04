@@ -33,38 +33,40 @@ function employeeWage() {
 
     switch (time) {
         case 4:
-            return 4*20
+            salary = 4*20
             break;
         case 8: 
-        return 8*20
+        salary = 8*20
     
         default:
             break;
     }
 
-    return salary;
+    return {salary, time }
 }
 
 // console.log("Salary get: $" + employeeWage());
 
 3. //Refactor the Code to write a function to get work hours
 
-function refact(params) {
+function getWorkHours() {
 
-    let wage = employeeWage()
+    let {salary, time}= employeeWage()
 
-    if (isPresent && wage == 80){
-        return "Employee is present for half day hence get, $" + wage
+    if (isPresent && time == 4){
+        return "Employee is present for half day (" + time +  " hours) hence get, $" + salary
     }
-    else if (isPresent && wage == 160){
-        return "Employee is present for full day hence get, $" + wage
+    else if (isPresent &&  time == 8){
+        return  "Employee is present for full day (" + time +  " hours) hence get, $" + salary
     }
-    else if (isPresent && wage == 0) {
-        return "Employee is present but did not do any work, hence get $" + wage
+    else if (isPresent && time == 0) {
+        return "Employee is present but did not do any work, hence get $" + salary
     }
     else{ return "Employee Absent, $0" }
     
     }
 
-    console.log(refact());
+    console.log(getWorkHours());
+    
+
     
