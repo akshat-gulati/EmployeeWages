@@ -1,22 +1,22 @@
 1. // Ability to Check Employee is present or Absent
 
-function calculateAttendance() {
+function isPresent() {
     const attendance = Math.floor(Math.random() * 11)
-    console.log(attendance);
+    // console.log(attendance);
 
     if (attendance > 0.5) {
-        var status = "Present"
+        var status = true
     }
     else{
-        var status = "Absent"
+        var status = false
     }
 
     return status;
     
 }
-let ans = calculateAttendance()
+let ans = isPresent()
 
-console.log(ans);
+// console.log("is present: " + ans);
 
 2. //Ability to Calculate Daily Employee Wage based on part time or full time work
 
@@ -28,7 +28,7 @@ function getRandomValue() {
 
 function employeeWage() {
     const time = getRandomValue()
-    console.log("Time Worked: " + time + " Hours");
+    // console.log("Time Worked: " + time + " Hours");
     let salary = 0;
 
     switch (time) {
@@ -45,5 +45,26 @@ function employeeWage() {
     return salary;
 }
 
-console.log("Salary get: $" + employeeWage());
+// console.log("Salary get: $" + employeeWage());
+
+3. //Refactor the Code to write a function to get work hours
+
+function refact(params) {
+
+    let wage = employeeWage()
+
+    if (isPresent && wage == 80){
+        return "Employee is present for half day hence get, $" + wage
+    }
+    else if (isPresent && wage == 160){
+        return "Employee is present for full day hence get, $" + wage
+    }
+    else if (isPresent && wage == 0) {
+        return "Employee is present but did not do any work, hence get $" + wage
+    }
+    else{ return "Employee Absent, $0" }
+    
+    }
+
+    console.log(refact());
     
