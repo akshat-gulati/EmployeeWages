@@ -42,7 +42,7 @@ function employeeWage() {
             break;
     }
 
-    return {salary, time }
+    return {salary, time}
 }
 
 // console.log("Salary get: $" + employeeWage());
@@ -66,4 +66,24 @@ function getWorkHours() {
     
     }
 
-    console.log(getWorkHours());
+    // console.log(getWorkHours());
+
+
+4. //   Calculating Wages for a Month assuming 20 Working Days in a Month
+
+function monthlyWages() {
+
+    let totalSalary = 0
+    let day = 0
+
+    for(let i = 0; i< 20; i++){
+
+        if (isPresent()) {
+            let {salary, time}= employeeWage()
+            totalSalary += salary
+            day++;
+        }
+    }
+    console.log("Employee Worked for "+ day + " days, hence total salary: " + totalSalary);   
+}
+monthlyWages()
