@@ -4,7 +4,7 @@ function isPresent() {
     const attendance = Math.floor(Math.random() * 11)
     // console.log(attendance);
 
-    if (attendance > 0.5) {
+    if (attendance > 5) {
         var status = true
     }
     else{
