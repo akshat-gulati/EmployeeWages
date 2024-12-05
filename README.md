@@ -134,3 +134,50 @@ console.log(maxWages());
 
 - **Purpose**: Calculates the total salary based on a maximum of 160 working hours or 20 days.
 - **Logic**: Uses a while loop to sum up the hours and salary until one of the conditions is met.
+
+
+
+# Employee Wage Calculator
+
+This project calculates the total annual wage and monthly breakdown for employees. It also provides functionality to retrieve wage and time worked for a specific month.
+
+## Functions
+
+### `annualwage()`
+Calculates the total annual wage and monthly breakdown for a single employee.
+
+- **Returns:** An array of objects containing the month, wage, and time worked.
+
+### `calculateForEmployees(numEmployees, employeeNames)`
+Calculates the annual wage and monthly breakdown for multiple employees.
+
+- **Parameters:**
+  - `numEmployees` (number): The number of employees.
+  - `employeeNames` (array): An array of employee names.
+
+- **Returns:** An object where each key is an employee name and the value is the detailed wage breakdown.
+
+### `getEmployeeDetails(name, month)`
+Retrieves the wage and time worked for a specific employee in a particular month.
+
+- **Parameters:**
+  - `name` (string): The name of the employee.
+  - `month` (string): The month for which details are required.
+
+- **Returns:** An object containing the wage and time worked for the specified month, or an error message if the employee or month is not found.
+
+## Usage
+
+1. **Calculate Annual Wage:**
+   ```javascript
+   let details = annualwage();
+   console.table(details);
+Calculate for Multiple Employees:
+
+const numEmployees = 3;
+const employeeNames = ["Alice", "Bob", "Charlie"];
+let employeeDetails = calculateForEmployees(numEmployees, employeeNames);
+Get Employee Details for a Month:
+
+console.table(getEmployeeDetails("Alice", "March"));
+```
