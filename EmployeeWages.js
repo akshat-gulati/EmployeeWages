@@ -141,7 +141,7 @@ function annualwage(){
 
     // console.log("Salary received during this year is: " + annualWage);
     // return detailedDict
-    
+    return detailedDict
 
 }
 
@@ -188,21 +188,56 @@ function annualwage(){
 
 // ------------------------------------------------------------------------------------------------------------
 
+// function calculateForEmployees(numEmployees, employeeNames) {
+//     let employeeData = [];
+
+//     for (let i = 0; i < numEmployees; i++) {
+//         console.log(`${i+1}Details for: ${employeeNames[i]}`)
+//         annualwage()
+
+//         console.log();
+//     }
+
+//     // console.table(employeeData);
+
+//     return{employeeNames: annualwage()}
+// }
+
+
+
+// calculateForEmployees(numEmployees, employeeNames);
+
 function calculateForEmployees(numEmployees, employeeNames) {
-    let employeeData = [];
+    let employeeData = {};
 
     for (let i = 0; i < numEmployees; i++) {
-        console.log(`${i+1}Details for: ${employeeNames[i]}`)
-        annualwage()
-
+        console.log(`${i + 1} Details for: ${employeeNames[i]}`);
+        let details = annualwage();
+        employeeData[employeeNames[i]] = details;
         console.log();
     }
 
-    // console.table(employeeData);
+    return employeeData;
 }
-
 const numEmployees = 3; // Number of employees
 const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
+let employeeDetails = calculateForEmployees(numEmployees, employeeNames);
 
-calculateForEmployees(numEmployees, employeeNames);
+8. // Find the wage and time worked in a particular month 
+function getEmployeeDetails(name, month) {
+    let details = employeeDetails[name];
+    if (details) {
+        let monthDetail = details.find(detail => detail.month === month);
+        if (monthDetail) {
+            return monthDetail;
+        } else {
+            return "Month not found.";
+        }
+    } else {
+        return "Employee not found.";
+    }
+}
+
+// Example usage
+console.log(getEmployeeDetails("Alice", "March"));
 
