@@ -114,6 +114,8 @@ function annualwage(){
     let annualWage = 0
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let totalTimeInYear = 0
+    let detailedDict = []
+    let totalDict = []
 
     for(let i =0; i<12; i++){
         let {totalSalary, totalTime} = maxWages()
@@ -121,11 +123,24 @@ function annualwage(){
         // console.log(" ");
         annualWage += totalSalary
         totalTimeInYear += totalTime
+        detailedDict.push({
+            month: months[i],
+            wage: totalSalary,
+            time: totalTime
+        })
     }
-    
-    
+    console.table(detailedDict)
+
+    totalDict.push({
+        months: 12,
+        totalTimeInYear: totalTimeInYear,
+        annualWage: annualWage
+    })
+
+    console.table(totalDict)
+
     // console.log("Salary received during this year is: " + annualWage);
-    return {annualWage, totalTimeInYear}
+    // return detailedDict
     
 
 }
@@ -148,23 +163,46 @@ function annualwage(){
 
 // calculateForEmployees(numEmployees, employeeNames);
 
+// ---------------------------------------------------------------------------------------------------
+
+// function calculateForEmployees(numEmployees, employeeNames) {
+//     let employeeData = [];
+
+//     for (let i = 0; i < numEmployees; i++) {
+//         let {annualWage, totalTimeInYear} = annualwage();
+
+//         employeeData.push({
+//             name: employeeNames[i],
+//             hours: totalTimeInYear,
+//             wage: annualWage
+//         });
+//     }
+
+//     console.table(employeeData);
+// }
+
+// const numEmployees = 3; // Number of employees
+// const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
+
+// calculateForEmployees(numEmployees, employeeNames);
+
+// ------------------------------------------------------------------------------------------------------------
+
 function calculateForEmployees(numEmployees, employeeNames) {
     let employeeData = [];
 
     for (let i = 0; i < numEmployees; i++) {
-        let {annualWage, totalTimeInYear} = annualwage();
+        console.log(`${i+1}Details for: ${employeeNames[i]}`)
+        annualwage()
 
-        employeeData.push({
-            name: employeeNames[i],
-            hours: totalTimeInYear,
-            wage: annualWage
-        });
+        console.log();
     }
 
-    console.table(employeeData);
+    // console.table(employeeData);
 }
 
 const numEmployees = 3; // Number of employees
 const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
 
 calculateForEmployees(numEmployees, employeeNames);
+
