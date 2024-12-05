@@ -14,9 +14,6 @@ function isPresent() {
     return status;
     
 }
-let ans = isPresent()
-
-// console.log("is present: " + ans);
 
 2. //Ability to Calculate Daily Employee Wage based on part time or full time work
 
@@ -105,29 +102,69 @@ function maxWages() {
     }
     // console.log( ("Total Working Hours: " + totalTime + "Hours, Total Working days: " + days + ". Hence you get Salary: " + totalSalary));
     
-    return totalSalary
+    return {totalSalary, totalTime}
 }
 
-console.log(maxWages());
+// console.log(maxWages());
 
 6. //Calculate total Annual wage and display monthly
 
-function annualWage(){
+function annualwage(){
 
     let annualWage = 0
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let totalTimeInYear = 0
 
     for(let i =0; i<12; i++){
-        let salary = maxWages()
-        console.log("Salary received during month of " + months[i] + ": " + salary)
-        console.log(" ");
-        annualWage += salary
+        let {totalSalary, totalTime} = maxWages()
+        // console.log("Salary received during month of " + months[i] + ": " + salary)
+        // console.log(" ");
+        annualWage += totalSalary
+        totalTimeInYear += totalTime
     }
     
     
-    console.log("Salary received during this year is: " + annualWage);
+    // console.log("Salary received during this year is: " + annualWage);
+    return {annualWage, totalTimeInYear}
     
 
 }
 
-annualWage()
+// annualwage()
+
+7. // Function to calculate total working hours and salary for multiple employees
+
+// function calculateForEmployees(numEmployees, employeeNames) {
+//     for (let i = 0; i < numEmployees; i++) {
+//         let {annualWage, totalTimeInYear} = annualwage();
+
+//         console.log(`${employeeNames[i]} worked for about ${totalTimeInYear} hours in a year, hence get  $${annualWage}`);
+//     }
+// }
+
+// // Example usage
+// const numEmployees = 3; // Number of employees
+// const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
+
+// calculateForEmployees(numEmployees, employeeNames);
+
+function calculateForEmployees(numEmployees, employeeNames) {
+    let employeeData = [];
+
+    for (let i = 0; i < numEmployees; i++) {
+        let {annualWage, totalTimeInYear} = annualwage();
+
+        employeeData.push({
+            name: employeeNames[i],
+            hours: totalTimeInYear,
+            wage: annualWage
+        });
+    }
+
+    console.table(employeeData);
+}
+
+const numEmployees = 3; // Number of employees
+const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
+
+calculateForEmployees(numEmployees, employeeNames);
