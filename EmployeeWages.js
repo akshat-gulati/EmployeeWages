@@ -103,7 +103,31 @@ function maxWages() {
             totalSalary += salary
         }
     }
-    return "Total Working Hours: " + totalTime + "Hours, Total Working days: " + days + ". Hence you get Salary: " + totalSalary
+    // console.log( ("Total Working Hours: " + totalTime + "Hours, Total Working days: " + days + ". Hence you get Salary: " + totalSalary));
+    
+    return totalSalary
 }
 
 console.log(maxWages());
+
+6. //Calculate total Annual wage and display monthly
+
+function annualWage(){
+
+    let annualWage = 0
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    for(let i =0; i<12; i++){
+        let salary = maxWages()
+        console.log("Salary received during month of " + months[i] + ": " + salary)
+        console.log(" ");
+        annualWage += salary
+    }
+    
+    
+    console.log("Salary received during this year is: " + annualWage);
+    
+
+}
+
+annualWage()
