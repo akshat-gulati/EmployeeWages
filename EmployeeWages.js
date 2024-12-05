@@ -221,6 +221,7 @@ function calculateForEmployees(numEmployees, employeeNames) {
 }
 const numEmployees = 3; // Number of employees
 const employeeNames = ["Alice", "Bob", "Charlie"]; // Employee names
+
 let employeeDetails = calculateForEmployees(numEmployees, employeeNames);
 
 8. // Find the wage and time worked in a particular month 
@@ -238,6 +239,5 @@ function getEmployeeDetails(name, month) {
     }
 }
 
-// Example usage
-console.log(getEmployeeDetails("Alice", "March"));
+console.table(getEmployeeDetails("Alice", "March"));
 
